@@ -3,7 +3,7 @@
 
 ## Description:
 
-Uses Javascript to generate a random password according to specified inputs from user to determine length and characters used.
+Uses Javascript to generate a random password according to specified inputs from a user to determine the length and characters used in the password.
 
 
 ## Screenshoot of website:
@@ -16,6 +16,6 @@ Uses Javascript to generate a random password according to specified inputs from
 
 ## Link to live website:
 
-[Link to Horiseon website]
+[Link to Password Generator website]
 (https://richardthopkins.github.io/Password-Generator/)
 
