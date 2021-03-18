@@ -8,7 +8,7 @@ var numbersArray = "1234567890".split("");
 var specialCharArray = " !#$%&'()*+-./:;<=>?@[\]^_`{|}~'" .split("");
 
 
-//shuffles generated password entered by the 
+//shuffles an array that is passed to the function and returns it.
 function shuffleArray(passwordArray) {
   var i, j, x;
   for (i = passwordArray.length - 1; i > 0; i--) {
@@ -20,7 +20,7 @@ function shuffleArray(passwordArray) {
   return passwordArray;
 }
 
-
+//takes an array and selects random indeces to the amount of the specified lenght. then returns the new array.
 function randomSelection(passwordArray, length){
   var newPassword = [];
   var i, selectedIndex;
@@ -44,8 +44,9 @@ function generatePassword(){
   if(parseInt(passwordLengthPrompt) >= 8 && parseInt(passwordLengthPrompt) <= 128){
     var lengthOfPassword = passwordLengthPrompt;
   }else{
-    window.alert("The entered amount was not valid please press ok to restart.");
-    generatePassword();
+    //if the amount was not valid restart and return nothing.
+    window.alert("you did not enter a valid length. Press Generate Password to try again.");
+    return "";
   }
 
   //checks if the user would like to use letters. and if they do weather they want uppercase and lowercase and adds them to the myPassword array.
@@ -65,18 +66,22 @@ function generatePassword(){
   var includeSpecialCharacters = window.confirm("Do you want Special Characters. in your password?\n" + "Click okay for yes and cancel for no.");
   if (includeSpecialCharacters)myPassword = myPassword.concat(specialCharArray);
 
+  //prints that the user didnt select anything if no password criteria where selected and returns nothing.
   if(myPassword.length === 0){
-
-  window.alert("you have selected no options.\n" +
-  "please press Generate Password to start again."
-  );
-    return ;
+    window.alert("you have selected no options.\n" +
+    "please press Generate Password to start again."
+    );
+    return "";
   }
 
+  //shuffles the array created by the selection made by the user.
   myPassword = shuffleArray(myPassword);
+  //passes the shuffled array to the randomSelection function to select random characters from the my password according to the length selected by the user.
   myPassword = randomSelection(myPassword, lengthOfPassword);
+  //joins the final arry into a string. (removes the commas seperating the array items.)
   myPassword = myPassword.join("");
 
+  //return the final password string when the generatePassword function is run.
   return myPassword;
 }
 
@@ -86,7 +91,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
