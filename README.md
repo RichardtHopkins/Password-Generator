@@ -1,4 +1,5 @@
-#Password Generator 
+#Password Generator
+
 
 ## Description:
 
@@ -7,13 +8,12 @@ Uses Javascript to generate a random password according to specified inputs from
 
 ## Screenshoots of website:
 
-![The header, navigation bar, and background image at the top of the screen.](./assets/images/screenshot1.png)
 
-
+![example of password generated with password generator website](./assets/images/website.png)
 
 
 ## Link to live website:
 
 [Link to Horiseon website]
-(Link goes here.)
+(https://richardthopkins.github.io/Password-Generator/)
 
