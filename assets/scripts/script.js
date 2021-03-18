@@ -9,25 +9,24 @@ var specialCharArray = " !#$%&'()*+-./:;<=>?@[\]^_`{|}~'" .split("");
 
 
 //shuffles an array that is passed to the function and returns it.
-function shuffleArray(passwordArray) {
-  var i, j, x;
-  for (i = passwordArray.length - 1; i > 0; i--) {
-      j = Math.floor(Math.random() * (i + 1));
-      x = passwordArray[i];
-      passwordArray[i] = passwordArray[j];
-      passwordArray[j] = x;
+function shuffleArray(array) {
+  var i, randIndex, swapIndex;
+  for (i = array.length - 1; i > 0; i--) {
+      randIndex = Math.floor(Math.random() * (i + 1));
+      swapIndex = array[i];
+      array[i] = array[randIndex];
+      array[randIndex] = swapIndex;
   }
-  return passwordArray;
+  return array;
 }
 
 //takes an array and selects random indeces to the amount of the specified lenght. then returns the new array.
-function randomSelection(passwordArray, length){
+function randomSelection(array, length){
   var newPassword = [];
   var i, selectedIndex;
   for (i = 1 ; i <= length; i++) {
-    selectedIndex = Math.floor(Math.random() * passwordArray.length);
-    newPassword.push(passwordArray[selectedIndex]);
-    console.log(newPassword);
+    selectedIndex = Math.floor(Math.random() * array.length);
+    newPassword.push(array[selectedIndex]);
   }
   return newPassword;
 }
