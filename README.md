@@ -16,6 +16,6 @@ Uses Javascript to generate a random password according to specified inputs from
 
 ## Link to live website:
 
-[Link to Password Generator website]
+
 (https://richardthopkins.github.io/Password-Generator/)
 
